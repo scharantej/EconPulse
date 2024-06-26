@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Economic Event Monitor</title>
+</head>
+<body>
+<h1>Upcoming Economic Events</h1>
+<ul>
+{% for event in events %}
+<li>{{ event.title }} - {{ event.impact }} - {{ event.date }}</li>
+{% endfor %}
+</ul>
+<br>
+<form action="/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email address">
+<input type="submit" value="Subscribe">
+</form>
+</body>
+</html>
+
+
