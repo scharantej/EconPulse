@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profile</title>
+</head>
+<body>
+<h1>Your Subscriptions</h1>
+<ul>
+{% for indicator in user.indicators.split(',') %}
+<li>{{ indicator }}</li>
+{% endfor %}
+</ul>
+<br>
+<form action="/profile/update" method="POST">
+<label for="indicators">Update Indicators:</label>
+<br>
+{% for indicator in indicators %}
+<input type="checkbox" name="indicators" value="{{ indicator }}"> {{ indicator }}
+{% endfor %}
+<br>
+<input type="submit" value="Update">
+</form>
+</body>
+</html>
+
