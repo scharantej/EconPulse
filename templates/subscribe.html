@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Subscribe</title>
+</head>
+<body>
+<h1>Subscribe to Economic Events</h1>
+<form action="/subscribe/submit" method="POST">
+<label for="email">Email Address:</label>
+<input type="email" name="email" placeholder="Enter your email address">
+<br>
+<label for="indicators">Select Indicators:</label>
+<br>
+{% for indicator in indicators %}
+<input type="checkbox" name="indicators" value="{{ indicator }}"> {{ indicator }}
+{% endfor %}
+<br>
+<input type="submit" value="Subscribe">
+</form>
+</body>
+</html>
+
+
